@@ -21,11 +21,11 @@ async def role(client, message, role_to_give):
     print(message.author)
     print(the_role)
     if message.author.has_role(the_role):
-        await client.user_role_delete(message.author, the_role)
+        await client.user_role_delete(message.author, the_role, None)
         result = f'The role {the_role} has been removed'
 
     else:
-        await client.user_role_add(message.author, the_role)
+        await client.user_role_add(message.author, the_role, None)
         result = f'The role {the_role} has been given'
     
     await client.message_create(message, result)

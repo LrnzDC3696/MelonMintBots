@@ -12,8 +12,6 @@ MUTED = Role.precreate(809443793413603409)
 #To be choosen roles
 FREE_ROLES = {
     'ANNOUNCEMENT':Role.precreate(809791647117475840),
-    'ALPHA':Role.precreate(745297481310404640),
-    'BEGINNER':Role.precreate(809443611468759110),
     'JAPANESE':Role.precreate(716717701070061619),
     'N5':Role.precreate(716719435481874555),
     'N4':Role.precreate(716719433619472424),
