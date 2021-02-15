@@ -5,6 +5,7 @@ NIHONGO_QUEST = Guild.precreate(709105396656111676)
 
 #Channel
 WELCOME_CHANNEL = ChannelText.precreate(809349050091569152)
+MEMBER_COUNT = 809262218763304960
 
 #Roles
 MUTED = Role.precreate(809443793413603409)
@@ -32,4 +33,15 @@ SERVER_RULES = {
     "8":"If someone is messaging you things you do not like please report it to the mods.",
     "9":"Please avoid potentionally offensive conversationm, such as politics, racism and religion.",
     "10":"Be humble. Our server is built up of people regardless of their level. If you notice someone is new please help them"
+    }
+
+#Nihongo Quest Links
+LINKS = {
+    'WEBSITE':'https://nihongoquest.com',
+    'TIKTOK':'https://www.tiktok.com/@nihongo.quest.dev',
+    'FACEBOOK':'https://facebook.com/NihongoQuest/',
+    'TWITTER':'https://twitter.com/bailey_eng',
+    'INSTAGRAM':'https://www.instagram.com/nihongoquestgame/',
+    'ITCH':'https://melonmintgames.itch.io/nihongo-quest',
+    'DISCORD':'https://discord.gg/B5WXZdj',
     }

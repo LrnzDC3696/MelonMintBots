@@ -4,12 +4,16 @@ from hata import Client
 
 MMB: Client
 
+# Role Assign
+
+# Role Give
+# Make reaction role
 @MMB.commands
 async def role(client, message, role_to_give):
-    """Gives you your chosen role"""
+    """Gives you your chosen role do `m!role all` to list available roles"""
      
-    the_role = FREE_ROLES.get(role_to_give.upper())
-    if not the_role:
+    result = FREE_ROLES.get(role_to_give.upper())
+    if not result:
         if role_to_give.upper() in ('ALL','LIST'):
             to_send = f'`{sorted(list(FREE_ROLES.keys()))}` are the roles available to be chosen'
             await client.message_create(message, to_send)
@@ -18,8 +22,6 @@ async def role(client, message, role_to_give):
         await client.message_create(message, 'Sorry I cannot find that role')
         return
     
-    print(message.author)
-    print(the_role)
     if message.author.has_role(the_role):
         await client.user_role_delete(message.author, the_role)
         result = f'The role {the_role} has been removed'
