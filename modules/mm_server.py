@@ -1,7 +1,7 @@
 from hata import Client, sleep
 
 from bot_utils.tools import get_human_count
-from bot_utils.guild_data import NIHONGO_QUEST, MEMBER_COUNT
+from bot_utils.shared_data import NIHONGO_QUEST, MEMBER_COUNT
 
 MELON_MINT: Client
     

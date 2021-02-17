@@ -3,7 +3,7 @@ from hata.ext.commands import setup_ext_commands
 from hata.ext.slash import setup_ext_slash
 from hata.ext.commands.helps.subterranean import SubterraneanHelpCommand
 
-from bot_utils.guild_data import BOT_LOGS, MELON_MINT_PREFIX, RED, RAN_FROM
+from bot_utils.shared_data import BOT_LOGS, MELON_MINT_PREFIX, RED, RAN_FROM
 
 MELON_MINT: Client
 

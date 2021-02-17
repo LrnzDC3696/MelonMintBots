@@ -1,6 +1,6 @@
 from hata import Client
 
-from bot_utils.guild_data import FREE_ROLES
+from bot_utils.shared_data import FREE_ROLES
 
 MELON: Client
 

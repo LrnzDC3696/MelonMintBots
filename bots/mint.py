@@ -3,7 +3,7 @@ from hata.ext.commands import setup_ext_commands
 from hata.ext.slash import setup_ext_slash
 from hata.ext.commands.helps.subterranean import SubterraneanHelpCommand
 
-from bot_utils.guild_data import BOT_LOGS, MINT_PREFIX, RAN_FROM, RED, RULES_CHANNEL, NAVIGATION_CHANNEL, WELCOME_CHANNEL
+from bot_utils.shared_data import BOT_LOGS, MINT_PREFIX, RAN_FROM, RED, RULES_CHANNEL, NAVIGATION_CHANNEL, WELCOME_CHANNEL
 from bot_utils.tools import get_human_count
 MINT: Client
 

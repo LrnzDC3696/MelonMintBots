@@ -1,6 +1,7 @@
-from bot_utils.guild_data import BOT_LOGS, NIHONGO_QUEST
-from bot_utils.tools import get_human_count
 from hata import Client
+
+from bot_utils.shared_data import BOT_LOGS, NIHONGO_QUEST
+from bot_utils.tools import get_human_count
 
 MELON_MINT: Client
 
