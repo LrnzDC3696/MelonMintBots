@@ -19,4 +19,55 @@ async def ready(client):
     if not SEND_LOG and not RAN_FROM[1]:
         return
     await client.message_create(BOT_LOGS, message)
+
+
+Todo = {
+    'bot':[
+        'add category in commands',
+        'add faq command',
+        'add change member count event',
+        'add dm help command',
+        'add reaction role',
+        'add user info command',
+        'add suggestion command',
+        'add error event',
+        'links commands'
+        ],
+    'bots':[
+        'add auto mod event'
+        'add filter words event',
+        'add leveling',
+        'add slash commands',
+        'add moderation command',
+        'add evalute command',
+        'add snekbox command',
+        'add image processing'
+        ],
+    'other':[
+        'translation command',
+        'global chat',
+        'games',
+        'gifs event',
+        'music',
+        'anime search',
+        'reddit search',
+        'google search',
+        'leveling'
+        ],
+    'server':[
+        'add welcome channel (information about the server)',
+        'remove dm sent by the bot'
+        ]
+    }
+    
+@MELON_MINT.commands
+async def todo(client, message, key):
+    """
+    get the key and access the key 2 if not found give the key lists
+    """
+    result = Todo.get(key)
+    if not result:
+        result = list(Todo.keys())
+    await client.message_create(message, f'`{result}`')
+    
     
