@@ -9,6 +9,9 @@ MINT_PREFIX = config.MINT_PREFIX
 MELON_PREFIX = config.MELON_PREFIX
 MELON_MINT_PREFIX = config.MELON_MINT_PREFIX
 
+INVITE = 'https://discord.com/api/oauth2/authorize?client_id={BOT_ID}&permissions=2147483639&scope=bot'
+SLASH = 'https://discord.com/oauth2/authorize?client_id={BOT_ID}&scope=applications.commands+bot'
+
 #Colors
 BLUE = 0x1489B0
 RED = 0xBC2E25
