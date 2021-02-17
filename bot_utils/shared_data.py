@@ -4,6 +4,7 @@ import config
 
 #Bots
 RAN_FROM = config.RAN_FROM
+SEND_LOG = False
 
 MINT_PREFIX = config.MINT_PREFIX
 MELON_PREFIX = config.MELON_PREFIX

@@ -3,9 +3,9 @@ import os
 try:
     from dotenv import load_dotenv
     load_dotenv()
-    RAN_FROM = 'Ran via Local Device'
+    RAN_FROM = ['Local Device', False]
 except ModuleNotFoundError:
-    RAN_FROM = 'Ran via Hosting'
+    RAN_FROM = ['Hosting', True]
 
 MELON_TOKEN = os.environ.get('TOKEN_MELON')
 MELON_ID = 811242799877718026
