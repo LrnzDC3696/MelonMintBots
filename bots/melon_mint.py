@@ -24,7 +24,6 @@ async def ready(client):
 Todo = {
     'bot':[
         'add category in commands',
-        'add faq command',
         'add change member count event',
         'add dm help command',
         'add reaction role',
@@ -62,12 +61,6 @@ Todo = {
     
 @MELON_MINT.commands
 async def todo(client, message, key):
-    """
-    get the key and access the key 2 if not found give the key lists
-    """
-    result = Todo.get(key)
-    if not result:
-        result = list(Todo.keys())
+    result = Todo.get(key) if Todo.get(key) else list(Todo.keys())
     await client.message_create(message, f'`{result}`')
-    
     
