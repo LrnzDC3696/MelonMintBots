@@ -25,7 +25,7 @@ async def guild_user_add(client, guild , user):
     
     private_channel = await client.channel_private_create(user)
 
-    member = get_human_count(guild)
+    member = await get_human_count(guild)
     server_message = f'Welcome {user:m} you are the {member}th member!!!'
     welcome_message = f"""
 Hello there!!!
