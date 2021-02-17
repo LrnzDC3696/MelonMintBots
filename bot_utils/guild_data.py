@@ -1,11 +1,36 @@
-from hata import Guild, ChannelText, ChannelVoice,Role
+from hata import Guild, ChannelText, ChannelVoice, Role
+
+import config
+
+#Bots
+RAN_FROM = config.RAN_FROM
+
+MINT_PREFIX = config.MINT_PREFIX
+MELON_PREFIX = config.MELON_PREFIX
+MELON_MINT_PREFIX = config.MELON_MINT_PREFIX
+
+#Colors
+BLUE = 0x1489B0
+RED = 0xBC2E25
+GREEN = None
 
 #Guild
 NIHONGO_QUEST = Guild.precreate(709105396656111676)
 
 #Channel
-WELCOME_CHANNEL = ChannelText.precreate(809349050091569152)
 MEMBER_COUNT = ChannelVoice.precreate(809262218763304960)
+
+ANNOUNCEMENT_CHANNEL = ChannelText.precreate(717045980981362799)
+RULES_CHANNEL = ChannelText.precreate(716722926111555590)
+ROLES_CHANNEL = ChannelText.precreate(809264280759042069)
+NAVIGATION_CHANNEL = ChannelText.precreate(809281727184240682)
+SUGGESTION_CHANNEL = ChannelText.precreate(809262950971473930)
+SERVER_CHANNEL = ChannelText.precreate(763204369221943337)
+
+WELCOME_CHANNEL = ChannelText.precreate(809349050091569152)
+OFF_TOPIC_CHANNEL = ChannelText.precreate(717211320881250336)
+BOT_CMDS_CHANNEL = ChannelText.precreate(809269896554348604)
+
 
 #Bot related channels
 BOT_LOGS = ChannelText.precreate(811036715992612864)

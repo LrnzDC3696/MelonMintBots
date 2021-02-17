@@ -1,14 +1,14 @@
-from bot_utils.guild_data import FREE_ROLES, NIHONGO_QUEST
-
 from hata import Client
 
-MMB: Client
+from bot_utils.guild_data import FREE_ROLES
+
+MELON: Client
 
 # Role assign
 
 # Role Give
 # Make reaction role
-@MMB.commands
+@MELON.commands
 async def role(client, message, role_to_give):
     """Gives you your chosen role do `m!role all` to list available roles"""
      
