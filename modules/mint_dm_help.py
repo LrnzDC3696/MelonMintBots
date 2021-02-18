@@ -1,7 +1,7 @@
 from hata import Client
 from hata.discord.channel import ChannelPrivate
 
-MELON_MINT : Client
+MINT : Client
 
 def take_suggestion():
     pass
@@ -9,7 +9,7 @@ def take_suggestion():
 def connect_to_mods():
     pass
 
-@MELON_MINT.events
+@MINT.events
 async def message_create(client, message):
     if message.author.is_bot:
         return

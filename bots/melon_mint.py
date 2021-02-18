@@ -27,10 +27,10 @@ Todo = {
         'add change member count event',
         'add dm help command',
         'add reaction role',
-        'add user info command',
-        'add suggestion command',
+        'add suggestion command (dm)',
+        'add user info command ',
         'add error event',
-        'links commands'
+        'implement logging module'
         ],
     'bots':[
         'add auto mod event'
@@ -61,6 +61,9 @@ Todo = {
     
 @MELON_MINT.commands
 async def todo(client, message, key):
+    if message.author.id != 762335112368750602:
+        return
+    
     result = Todo.get(key) if Todo.get(key) else list(Todo.keys())
     await client.message_create(message, f'`{result}`')
     

@@ -41,6 +41,7 @@ BOT_LOGS = ChannelText.precreate(811036715992612864)
 DM_BOT_SUPPORT = ChannelText.precreate(811036609809612830)
 
 #Roles
+MOD_ROLE = Role.precreate(716309172756414464)
 MUTED = Role.precreate(809443793413603409)
 
 #To be choosen roles

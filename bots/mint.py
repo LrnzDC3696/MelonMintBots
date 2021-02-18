@@ -43,5 +43,5 @@ Also check out {NAVIGATION_CHANNEL:m} to see what the channels are for.
             server_message += f'\nSince I can\'t DM you I\'ll send the message here \n\n{welcome_message}'
     
     to_send = await client.message_create(WELCOME_CHANNEL, server_message)
-    await sleep(60*3)
+    await sleep(60*5)
     await client.message_delete(to_send)
