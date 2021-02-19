@@ -26,7 +26,7 @@ async def ready(client):
 async def rule(client, message, rule_number):
     the_rule = SERVER_RULES.get(rule_number)
     embed = Embed(color=BLUE)
-    embed.add_field(f'RULE {rule_number}', the_rule)
+    embed.add_field(f'RULE {rule_number}', the_rule if the_rule else "Does not Exist")
     await client.message_create(message.channel, embed)
     await client.message_delete(message)
     
