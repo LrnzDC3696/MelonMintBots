@@ -42,7 +42,7 @@ Have a fun stay at our server and good luck on learning Japanese!
         await client.message_create(private_channel, welcome_message)
     except DiscordException as brr:
         if brr.code == ERROR_CODES.cannot_message_user:
-            server_message += f'\nSince I can\'t DM you I\'ll send the message here \n\n{welcome_message}'
+            server_message += f"\nSince I can't DM you I'll send the message here\n\n{welcome_message}"
     
     to_send = await client.message_create(WELCOME_CHANNEL, server_message)
     await sleep(60*5)
