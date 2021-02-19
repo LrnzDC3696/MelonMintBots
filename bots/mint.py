@@ -3,7 +3,7 @@ from hata.ext.commands import setup_ext_commands
 from hata.ext.slash import setup_ext_slash
 from hata.ext.commands.helps.subterranean import SubterraneanHelpCommand
 
-from bot_utils.shared_data import SEND_LOG, BOT_LOGS, MINT_PREFIX, RAN_FROM, RED, RULES_CHANNEL, NAVIGATION_CHANNEL, WELCOME_CHANNEL
+from bot_utils.shared_data import SEND_LOG, BOT_LOGS, MINT_PREFIX, RAN_FROM, RED, WELCOME_N_RULES_CHANNEL, NAVIGATION_CHANNEL, WELCOME_CHANNEL
 from bot_utils.tools import get_human_count
 MINT: Client
 
@@ -32,8 +32,10 @@ async def guild_user_add(client, guild , user):
     server_message = f'Welcome {user:m} you are the {member}th member!!!'
     welcome_message = f"""
 Hello there!!!
-Please follow the {RULES_CHANNEL:m} in our server.
+Please read and follow the {WELCOME_N_RULES_CHANNEL:m} in our server.
 Also check out {NAVIGATION_CHANNEL:m} to see what the channels are for.
+
+Have a fun stay at our server and good luck on learning Japanese!
 """
 
     try:
