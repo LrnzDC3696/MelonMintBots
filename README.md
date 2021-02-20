@@ -1,2 +1,2 @@
-# XD-Bot
-A discord bot for helping me learn more about python and working with api
+# MelonMint
+Discord bots using hata api wrapper
