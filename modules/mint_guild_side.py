@@ -1,15 +1,16 @@
 
-from hata import Client, Embed, sleep
+from hata import Client, Embed, sleep, Permission
 from hata.ext.commands import checks
-
 from bot_utils.shared_data import LINKS, SERVER_RULES, BLUE, MOD_ROLE
 from bot_utils.faq_data import FAQ
 
 MINT : Client
 
-@MINT.commands(checks = checks.has_role(MOD_ROLE))
+@MINT.commands(
+    checks=checks.has_guild_permissions(Permission().update_by_keys(manage_guild = True))
+    )
 async def welcome(client, message):
-    """Sends all the information needed for beginners"""
+    """Sends all the information needed for beginners must have "manage guild" permission"""
     
     #intro 
     await client.message_create(message.channel,
@@ -128,23 +129,6 @@ Visit <#717200392840282154> to know more about the game and how to download it!
         )
         
     await client.message_delete(message)
-    
-@MINT.commands
-async def faq(client, message, key):
-    """
-    Gives you the faq that you have given.
-    If the faq isn't in the database you willll get a list of faq available.
-    """
-    try:
-        embed = Embed(title=key.lower(), description=FAQ[key])
-    
-    except KeyError:
-        embed = Embed(
-            title=f'FAQ `{key}` not found',
-            description=f'Available FAQs `{list(FAQ.keys())}`'
-            )
-    
-    await client.message_create(message.channel, embed)
 
 @MINT.commands
 async def link(client, message, key):
