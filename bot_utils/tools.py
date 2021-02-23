@@ -1,4 +1,4 @@
-from difflib import get_close_matches 
+from difflib import get_close_matches
 
 async def closeMatches(patterns, word):
     """ 
