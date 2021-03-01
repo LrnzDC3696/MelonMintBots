@@ -14,7 +14,7 @@ class role:
         prefix = self.command_processer.get_prefix_for(message)
         return Embed(
             title = 'Role Command',
-            color = colourfunc,
+            color = colourfunc(self, message, message.guild),
             description = (
                 'Gives or removes the given role\n'
                 f'To list all role do `{prefix}role all`'
