@@ -14,7 +14,7 @@ async def update_user_count(_smth):
     Updates the server count vc
     """
     member = await GET_HUMAN_COUNT(NIHONGO_QUEST)
-    await MINT.channel_edit(MEMBER_COUNT, name=f"member count {member}")
+    await MINT.channel_edit(MEMBER_COUNT, name = f"member count {member}")
 
 MINT.loop.cycle(float(3*60), update_user_count)
 MINT.command_processer.create_category('Server',)
@@ -51,7 +51,7 @@ async def rule(client, message, rule_number):
     Gives you the rule that you want
     """
     the_rule = SERVER_RULES.get(rule_number)
-    embed = Embed(color=BLUE)
+    embed = Embed(color = BLUE)
     embed.add_field(f'RULE {rule_number}', the_rule or "Does not Exist")
     return embed
 
@@ -62,12 +62,10 @@ async def link(client, message, key):
     If the link is not in the database you will get all of the links.
     """
     try:
-        embed = Embed(description=f'**[{key.upper()}]({LINKS[key.upper()]})**'.lower())
-        return embed
+        return Embed(description = f'**[{key.upper()}]({LINKS[key.upper()]})**'.lower())
     except KeyError:
         string = '\n'.join((f'**[{x}]({y})**'.lower() for x, y in sorted(LINKS.items())))
-        embed = Embed(title='Nihongo Quest Links', description=string)
-        return embed
+        return Embed(title = 'Nihongo Quest Links', description = string)
 
 @MINT.commands.from_class
 class welcome:
