@@ -1,7 +1,8 @@
 
 from hata import Client, Embed, sleep
 
-from bot_utils.shared_data import LINKS, SERVER_RULES, BLUE, MEMBER_COUNT, NIHONGO_QUEST
+from bot_utils.shared_data import (LINKS, SERVER_RULES, BLUE, MEMBER_COUNT, NIHONGO_QUEST, WELCOME_N_RULES_CHANNEL,
+    NAVIGATION_CHANNEL, GENERAL_CHANNEL)
 from bot_utils.permission_handler import CHECK_MANAGE_GUILD
 from bot_utils.tools import GET_HUMAN_COUNT
 
@@ -40,7 +41,7 @@ async def guild_user_add(client, guild , user):
         if brr.code == ERROR_CODES.cannot_message_user:
             server_message += f"\nSince I can't DM you I'll send the message here\n\n{welcome_message}"
     
-    to_send = await client.message_create(WELCOME_CHANNEL, server_message)
+    to_send = await client.message_create(GENERAL_CHANNEL, server_message)
     await sleep(60*5)
     await client.message_delete(to_send)
 
@@ -51,7 +52,7 @@ async def rule(client, message, rule_number):
     """
     the_rule = SERVER_RULES.get(rule_number)
     embed = Embed(color=BLUE)
-    embed.add_field(f'RULE {rule_number}', the_rule if the_rule else "Does not Exist")
+    embed.add_field(f'RULE {rule_number}', the_rule or "Does not Exist")
     return embed
 
 @MINT.commands(category = 'Server')
