@@ -16,7 +16,9 @@ async def update_user_count(_smth):
     member = await GET_HUMAN_COUNT(NIHONGO_QUEST)
     await MINT.channel_edit(MEMBER_COUNT, name = f"member count {member}")
 
-MINT.loop.cycle(float(3*60), update_user_count)
+MINT.loop.cycle(float(5*60), update_user_count)
+
+
 MINT.command_processer.create_category('Server',)
 
 @MINT.events
