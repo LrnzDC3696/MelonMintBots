@@ -1,5 +1,5 @@
 
-from hata import Client, Embed, sleep
+from hata import Client, Embed, sleep, DiscordException, ERROR_CODES
 
 from bot_utils.shared_data import (LINKS, SERVER_RULES, BLUE, MEMBER_COUNT, NIHONGO_QUEST, WELCOME_N_RULES_CHANNEL,
     NAVIGATION_CHANNEL, GENERAL_CHANNEL)

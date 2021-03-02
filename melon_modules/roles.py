@@ -1,6 +1,6 @@
 from hata import Client, Embed
 
-from bot_utils.shared_data import FREE_ROLES, BLUE
+from bot_utils.shared_data import FREE_ROLES
 from bot_utils.tools import colourfunc
 MELON: Client
 
