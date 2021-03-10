@@ -3,12 +3,14 @@ from hata.ext.commands import setup_ext_commands
 from hata.ext.commands.helps.subterranean import SubterraneanHelpCommand
 
 from bot_utils.shared_data import SEND_LOG, BOT_LOGS, MELON_MINT_PREFIX, RAN_FROM
-from bot_utils.tools import colourfunc
 
 MELON_MINT: Client
 
 setup_ext_commands(MELON_MINT, MELON_MINT_PREFIX, default_category_name="Uncategorized",)
-MELON_MINT.commands(SubterraneanHelpCommand(colourfunc), 'help',)
+MELON_MINT.commands(SubterraneanHelpCommand(
+        lambda _client, msg, _name: msg.author.color_at(msg.guild)
+    ),'help',
+)
 
 @MELON_MINT.events
 async def ready(client):

@@ -4,14 +4,16 @@ from hata.ext.slash import setup_ext_slash
 from hata.ext.commands.helps.subterranean import SubterraneanHelpCommand
 
 from bot_utils.shared_data import SEND_LOG, BOT_LOGS, MINT_PREFIX, RAN_FROM, NIHONGO_QUEST
-from bot_utils.tools import colourfunc
 
 MINT: Client
 
 setup_ext_commands(MINT, MINT_PREFIX, default_category_name="Uncategorized",)
 setup_ext_slash(MINT)
 
-MINT.commands(SubterraneanHelpCommand(colourfunc), 'help',)
+MINT.commands(SubterraneanHelpCommand(
+        lambda _client, msg, _name: msg.author.color_at(msg.guild)
+    ),'help',
+)
 
 @MINT.events
 async def ready(client):

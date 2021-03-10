@@ -2,7 +2,7 @@ from firebase import Firebase
 
 from hata import Embed
 
-from .tools import EXECUTOR
+from .tools import executor
 from .shared_data import BOT_LOGS
 import config
 
@@ -52,7 +52,7 @@ async def store_guild_data(client, guild):
     
     #For the prefix
     with client.keep_typing(BOT_LOGS):
-        has_bot_data = bool(await EXECUTOR(client, DATABASE.child('MelonMintBots').get().val))
+        has_bot_data = bool(await executor(client, DATABASE.child('MelonMintBots').get().val))
         if has_bot_data is None:
             
             bot_data = {
@@ -61,7 +61,7 @@ async def store_guild_data(client, guild):
                 config.MELON_MINT_ID:{'prefix':config.MELON_MINT_PREFIX}
             }
             
-            await EXECUTOR(client, DATABASE.child('MelonMintBots').set(bot_data).update)
+            await executor(client, DATABASE.child('MelonMintBots').set(bot_data).update)
             value_msg = f"Set to {f'<@{id}> is set to {prefix}' for id, prefix in bot_data.items()}"
         else:
             value_msg = "Prefix Unchanged"
@@ -74,7 +74,7 @@ async def store_guild_data(client, guild):
         update_count = 0
         
         guild_users = message.guild.users.copy().values()
-        member_list = await EXECUTOR(client, DATABASE.child('members').shallow(). get().val)
+        member_list = await executor(client, DATABASE.child('members').shallow(). get().val)
         
         for user in guild_users:
             if user.is_bot:
@@ -94,7 +94,7 @@ async def store_guild_data(client, guild):
                 new_count += 1
             
             else: #update stuff
-                new_data = await EXECUTOR(client, DATABASE.child('members').child(str(user.id)).get().val)
+                new_data = await executor(client, DATABASE.child('members').child(str(user.id)).get().val)
                     
                 new_data['joined_at'].append(str(user_data.joined_at))
                 new_data['name'].append(user.name)
@@ -109,7 +109,7 @@ async def store_guild_data(client, guild):
                                 
                 update_count += 1
             print(f'Added {new_count}/{len(guild.users)}\nUpdated {update_count}/{len(guild.users)}')
-            await EXECUTOR(client, DATABASE.child('members').child(str(user.id)).set(new_data).update)
+            await executor(client, DATABASE.child('members').child(str(user.id)).set(new_data).update)
         embed = embed.add_field(name = "Member Status", value = f'Added {new_count}/{len(guild.users)}\nUpdated {update_count}/{len(guild.users)}')
         await client.message_edit(message, embed)
         await client.message_create(message.channel, 'done')

@@ -4,7 +4,7 @@ from hata import Client, Embed, sleep, DiscordException, ERROR_CODES
 from bot_utils.shared_data import (LINKS, SERVER_RULES, BLUE, MEMBER_COUNT, NIHONGO_QUEST, WELCOME_N_RULES_CHANNEL,
     NAVIGATION_CHANNEL, GENERAL_CHANNEL)
 from bot_utils.permission_handler import CHECK_MANAGE_GUILD
-from bot_utils.tools import GET_HUMAN_COUNT
+from bot_utils.tools import get_human_count
 
 
 MINT : Client
@@ -13,7 +13,7 @@ async def update_user_count(_smth):
     """
     Updates the server count vc
     """
-    member = await GET_HUMAN_COUNT(NIHONGO_QUEST)
+    member = await get_human_count(NIHONGO_QUEST)
     await MINT.channel_edit(MEMBER_COUNT, name = f"member count {member}")
 
 MINT.loop.cycle(float((5*60)*12), update_user_count) #every hour
@@ -28,7 +28,7 @@ async def guild_user_add(client, guild , user):
     
     private_channel = await client.channel_private_create(user)
 
-    member = await GET_HUMAN_COUNT(guild)
+    member = await get_human_count(guild)
     server_message = f'Welcome {user:m} you are the {member}th member!!!'
     welcome_message = (
         'Hello there!!!\n'
